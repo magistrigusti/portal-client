@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
 import { HeroUIProvider } from "@heroui/react";
 import { createBrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "./components/theme-provider/index";
 import { App } from "./App"
 import { store } from "./app/store"
 import "./index.css"
@@ -19,14 +20,16 @@ const router = createBrowserRouter([
   }
 ]);
 
-if (container) {
+if (container) { 
   const root = createRoot(container)
 
   root.render(
     <StrictMode>
       <Provider store={store}>
         <HeroUIProvider>
-          <App />
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
         </HeroUIProvider>
       </Provider>
     </StrictMode>,
