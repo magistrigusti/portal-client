@@ -1,6 +1,6 @@
 
 
-export const Post = () => {
+export const Posts = () => {
   return (
     <div>
       Posts
